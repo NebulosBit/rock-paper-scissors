@@ -16,7 +16,24 @@ function getComputerChoice(){
   return computerChoice;
 }
 
+function playRound(playerChoice, computerChoice){
+  if (playerChoice === computerChoice){
+    return `It's a tie! Player: ${playerChoice} - Computer: ${computerChoice}`;
+  }
+  else if (
+    (playerChoice === rockPaperScissor[0] && computerChoice === rockPaperScissor[2]) ||
+    (playerChoice === rockPaperScissor[1] && computerChoice === rockPaperScissor[0]) ||
+    (playerChoice === rockPaperScissor[3] && computerChoice === rockPaperScissor[2])
+  ){
+    return `You win! Player: ${playerChoice} - Computer: ${computerChoice}`
+  }
+  else{
+    return `You lost. Player: ${playerChoice} - Computer: ${computerChoice}`;
+  }
+}
+
 const playerChoice = getPlayerChoice();
 const computerChoice = getComputerChoice();
+console.log(playRound(playerChoice, computerChoice));
 console.log(`Player: ${playerChoice}`);
 console.log(`Computer: ${computerChoice}`);
