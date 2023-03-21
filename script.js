@@ -32,8 +32,15 @@ function playRound(playerChoice, computerChoice){
   }
 }
 
+function game(){
+  for (let i = 1; i < 5; i++){
+    const playerChoice = getPlayerChoice();
+    const computerChoice = getComputerChoice();
+    console.log(playRound(playerChoice, computerChoice));
+  }
+}
+
 const playerChoice = getPlayerChoice();
 const computerChoice = getComputerChoice();
 console.log(playRound(playerChoice, computerChoice));
-console.log(`Player: ${playerChoice}`);
-console.log(`Computer: ${computerChoice}`);
+game();
