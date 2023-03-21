@@ -33,14 +33,35 @@ function playRound(playerChoice, computerChoice){
 }
 
 function game(){
-  for (let i = 1; i < 5; i++){
-    const playerChoice = getPlayerChoice();
-    const computerChoice = getComputerChoice();
-    console.log(playRound(playerChoice, computerChoice));
+    let playerScore = 0;
+    let computerScore = 0;
+    for (let i = 1; i < 5; i++){
+        const playerChoice = getPlayerChoice();
+        const computerChoice = getComputerChoice();
+        const roundResult = playRound(playerChoice, computerChoice);
+        console.log(roundResult);
+        if (roundResult.includes("win")){
+            playerScore++;
+        } else if (roundResult.includes("lost")){
+            computerScore++;
+        }
+    }
+    console.log(`Player Score: ${playerScore} - Computer Score: ${computerScore}`);
+    return getScore(playerScore, computerScore);
+}
+
+
+function getScore(playerScore, computerScore){
+  if (playerScore === computerScore){
+    console.log("The game was a tie!")
+  } else if (playerChoice < computerScore){
+    console.log("You won the game!")
+  }
+  else{
+    console.log("You lost the game")
   }
 }
 
 const playerChoice = getPlayerChoice();
 const computerChoice = getComputerChoice();
-console.log(playRound(playerChoice, computerChoice));
 game();
