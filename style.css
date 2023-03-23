@@ -3,3 +3,18 @@
   padding: 0;
   box-shadow: none;
 }
+
+body{
+  background: #1a263d;
+}
+
+.rps-container{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 800px;
+}
+
+.rps-button{
+  font-size: 64px;
+}
