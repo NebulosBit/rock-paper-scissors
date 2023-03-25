@@ -16,4 +16,29 @@ function getComputerChoice() {
   return computerChoice;
 }
 
+function getScore(playerChoice, computerChoice) {
+  let score = 0;
+  
+  // assigns a score of 0 to handle tie scenarios in the game
+  if (playerChoice == computerChoice){
+    score = 0;
+  } 
+  // assigns a score of 0 to handle losing scenarios in the game
+  else if (playerChoice === rPSOption[0] && computerChoice === rPSOption[2]) {
+    score = 1;
+  } 
+  else if (playerChoice === rPSOption[1] && computerChoice === rPSOption[0]) {
+    score = 1;
+  } 
+  else if (playerChoice === rPSOption[2] && computerChoice === rPSOption[1]) {
+    score = 1;
+  } 
+  // assigns a score of 0 to handle losing scenarios in the game
+  else {
+    score = -1
+  }
+  
+  return score
+}
+
 getPlayerChoice()
