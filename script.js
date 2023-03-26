@@ -6,6 +6,7 @@ function getPlayerChoice() {
     rpsButtons[i].addEventListener("click", 
     function() {
       const playerChoice = this.getAttribute("value");
+      displayScore(playerChoice)
     });
   }
 }
