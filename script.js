@@ -41,4 +41,12 @@ function getScore(playerChoice, computerChoice) {
   return score
 }
 
+function displayScore(playerChoice){
+  let computerChoice = getComputerChoice();
+  console.log(`Player Choice: ${playerChoice}`);
+  console.log(`computer Choice: ${computerChoice}`);
+  console.log(`${getScore(playerChoice, computerChoice)}`);
+}
+
+
 getPlayerChoice()
