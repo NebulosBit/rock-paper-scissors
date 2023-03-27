@@ -17,14 +17,11 @@ function getComputerChoice() {
   return computerChoice;
 }
 
-function getScore(playerChoice, computerChoice) {
-  let playerScore = 0;
-  let computerScore = 0;
+function playRound(playerChoice, computerChoice) {
   
   // assigns a score of 0 to handle tie scenarios in the game
   if (playerChoice == computerChoice){
-    playerScore;
-    computerScore;
+    return `It's a tie! Player: ${playerChoice} - Computer: ${computerChoice}`;
   } 
   // assigns a score of 0 to handle losing scenarios in the game
   else if (
@@ -32,22 +29,19 @@ function getScore(playerChoice, computerChoice) {
     (playerChoice === rPSOption[1] && computerChoice === rPSOption[0]) ||
     (playerChoice === rPSOption[2] && computerChoice === rPSOption[1])
   ){
-    playerScore =+ 1;
+    return `You win! Player: ${playerChoice} - Computer: ${computerChoice}`
   }
   // assigns a score of 0 to handle losing scenarios in the game
   else {
-    computerScore =+ 1;
+    return `You lost. Player: ${playerChoice} - Computer: ${computerChoice}`;
   }
-  
-  return [playerScore, computerScore];
 }
 
 function displayScore(playerChoice){
   let computerChoice = getComputerChoice();
   console.log(`Player Choice: ${playerChoice}`);
   console.log(`computer Choice: ${computerChoice}`);
-  console.log(`${getScore(playerChoice, computerChoice)}`);
+  console.log(`${playRound(playerChoice, computerChoice)}`);
 }
-
 
 getPlayerChoice()
