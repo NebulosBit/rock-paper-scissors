@@ -2,13 +2,11 @@
   margin: 0;
   padding: 0;
   box-shadow: none;
+  color: white;
 }
 
 body{
   background: #1a263d;
-}
-
-.rps-container{
   align-items: center;
   display: flex;
   justify-content: center;
@@ -17,4 +15,14 @@ body{
 
 .rps-button{
   font-size: 64px;
+}
+
+.score{
+  display: flex;
+  justify-content: center;
+}
+
+#player-score,
+#computer-score{
+  margin: 25px 15px;
 }
