@@ -8,9 +8,27 @@
   <title>Document</title>
 </head>
 <body>
-  <button id="rock">✊</button>
-  <button id="paper">✋</button>
-  <button id="scissor">✌️</button>
+  <div>
+    <div class="text-container">
+      <div id="select-throw">Select your throw</div>
+      <div id="reach-score">reach a total of 5 points before their opponent</div>
+    </div>
+    <div class="rps-container">
+      <button class="rps-button" value="Rock">✊</button>
+      <button class="rps-button" value="Paper">✋</button>
+      <button class="rps-button" value="Scissor">✌️</button>
+    </div>
+    <div class="score">
+      <div class="score-container">
+        <div class="hand" id="playerHand">❓</div>
+        <div id="player-score">Player: 0</div>
+      </div>
+      <div class="score-container">
+        <div class="hand" id="computerHand">❓</div>
+        <div id="computer-score">Computer: 0</div>
+      </div>
+    </div>
+  </div>
   <script src="script.js"></script>
 </body>
 </html>
