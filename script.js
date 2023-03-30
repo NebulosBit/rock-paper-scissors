@@ -1,4 +1,6 @@
 const rpsButtons = document.querySelectorAll(".rps-button");
+const playerHtmlScore = document.getElementById("player-score");
+const computerHtmlScore = document.getElementById("computer-score");
 let playerScore = 0;
 let computerScore = 0;
 const rPSOption = ["Rock", "Paper", "Scissor"];
@@ -44,12 +46,14 @@ function game(playerChoice, computerChoice) {
   if (roundResult.includes("win")){
     const playerGameScore = `Player: ${playerScore = playerScore + 1}`;
     console.log(playerGameScore)
+    playerHtmlScore.innerText = playerGameScore;
     if (playerScore == 5) {
       console.log("You won!")
     }
   } else if (roundResult.includes("lost")){
     const computerGameScore = `Computer: ${computerScore = computerScore + 1}`;
     console.log(computerGameScore);
+    computerHtmlScore.innerText = computerGameScore;
     if (computerScore == 5) {
       console.log("You lost!")
     }
