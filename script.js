@@ -3,6 +3,8 @@ const playerHtmlScore = document.getElementById("player-score");
 const computerHtmlScore = document.getElementById("computer-score");
 const playerHand = document.getElementById("playerHand");
 const computerHand = document.getElementById("computerHand");
+const selectThrow = document.getElementById("select-throw")
+let reachScore = document.getElementById("reach-score")
 let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0; // added roundsPlayed variable
@@ -28,7 +30,9 @@ function playRound(playerChoice, computerChoice) {
   
   // assigns a score of 0 to handle tie scenarios in the game
   if (playerChoice == computerChoice){
-    return `It's a tie! Player: ${playerChoice} - Computer: ${computerChoice}`;
+    let tieText = `It's a tie! Player: ${playerChoice} - Computer: ${computerChoice}`
+    reachScore.innerText = tieText;
+    return tieText;
   } 
   // assigns a score of 0 to handle losing scenarios in the game
   else if (
@@ -36,11 +40,16 @@ function playRound(playerChoice, computerChoice) {
     (playerChoice === rPSOption[1] && computerChoice === rPSOption[0]) ||
     (playerChoice === rPSOption[2] && computerChoice === rPSOption[1])
   ){
-    return `You win! Player: ${playerChoice} - Computer: ${computerChoice}`
+    let winText = `You win! Player: ${playerChoice} - Computer: ${computerChoice}`
+    reachScore.innerText = winText;
+    return winText;
   }
   // assigns a score of 0 to handle losing scenarios in the game
   else {
-    return `You lost. Player: ${playerChoice} - Computer: ${computerChoice}`;
+    let lostText = `You lost. Player: ${playerChoice} - Computer: ${computerChoice}`;
+    reachScore.innerText = lostText;
+    return lostText;
+    
   }
 }
 
@@ -57,7 +66,9 @@ function game(playerChoice, computerChoice) {
     console.log(playerGameScore)
     playerHtmlScore.innerText = playerGameScore;
     if (playerScore == 5) {
-      console.log("You won!")
+      let gameWin = "You Won!"
+      selectThrow.innerText = gameWin;
+      console.log(gameWin);
       gameEnd()
     }
   } else if (roundResult.includes("lost")){
@@ -65,7 +76,9 @@ function game(playerChoice, computerChoice) {
     console.log(computerGameScore);
     computerHtmlScore.innerText = computerGameScore;
     if (computerScore == 5) {
-      console.log("You lost!")
+      let gameLost = "You lost!"
+      selectThrow.innerText = gameLost;
+      console.log(gameLost);
       gameEnd()
     }
   }

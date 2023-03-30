@@ -56,12 +56,12 @@ body{
   margin: 45px 0;
 }
 
-.select-throw{
+#select-throw{
   display: flex;
   justify-content: center;
   font-size: 32px;
 }
 
-.reach-score{
+#reach-score{
   font-size: 20px;
 }
