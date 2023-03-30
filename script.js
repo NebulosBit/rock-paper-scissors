@@ -3,6 +3,7 @@ const playerHtmlScore = document.getElementById("player-score");
 const computerHtmlScore = document.getElementById("computer-score");
 let playerScore = 0;
 let computerScore = 0;
+let roundsPlayed = 0; // added roundsPlayed variable
 const rPSOption = ["Rock", "Paper", "Scissor"];
 
 function getPlayerChoice() {
@@ -10,7 +11,7 @@ function getPlayerChoice() {
     rpsButtons[i].addEventListener("click", 
     function() {
       const playerChoice = this.getAttribute("value");
-      displayScore(playerChoice)
+      displayScore(playerChoice);
     });
   }
 }
@@ -41,6 +42,12 @@ function playRound(playerChoice, computerChoice) {
   }
 }
 
+function gameEnd(){
+  for (let i = 0; i < rpsButtons.length; i++) {
+      rpsButtons[i].disabled = true;
+  }
+}
+
 function game(playerChoice, computerChoice) {
   const roundResult = playRound(playerChoice, computerChoice);
   if (roundResult.includes("win")){
@@ -49,6 +56,7 @@ function game(playerChoice, computerChoice) {
     playerHtmlScore.innerText = playerGameScore;
     if (playerScore == 5) {
       console.log("You won!")
+      gameEnd()
     }
   } else if (roundResult.includes("lost")){
     const computerGameScore = `Computer: ${computerScore = computerScore + 1}`;
@@ -56,6 +64,7 @@ function game(playerChoice, computerChoice) {
     computerHtmlScore.innerText = computerGameScore;
     if (computerScore == 5) {
       console.log("You lost!")
+      gameEnd()
     }
   }
   else {
