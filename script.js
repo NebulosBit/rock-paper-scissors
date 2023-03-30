@@ -1,6 +1,8 @@
 const rpsButtons = document.querySelectorAll(".rps-button");
 const playerHtmlScore = document.getElementById("player-score");
 const computerHtmlScore = document.getElementById("computer-score");
+const playerHand = document.getElementById("playerHand");
+const computerHand = document.getElementById("computerHand");
 let playerScore = 0;
 let computerScore = 0;
 let roundsPlayed = 0; // added roundsPlayed variable
@@ -72,12 +74,42 @@ function game(playerChoice, computerChoice) {
   }
 }
 
+function htmlHand(playerChoice, computerChoice){
+  playerHandCheck(playerChoice)
+  computerHandCheck(computerChoice)
+}
+
+function playerHandCheck(playerChoice){
+  if (playerChoice == "Rock") {
+    playerHand.innerText = "✊"
+  }
+  if (playerChoice == "Paper") {
+    playerHand.innerText = "✋"
+  }
+  if (playerChoice == "Scissor") {
+    playerHand.innerText = "✌️"
+  }
+}
+
+function computerHandCheck(computerChoice) {
+  if (computerChoice == "Rock") {
+    computerHand.innerText = "✊"
+  }
+  if (computerChoice == "Paper") {
+    computerHand.innerText = "✋"
+  }
+  if (computerChoice == "Scissor") {
+    computerHand.innerText = "✌️"
+  }
+}
+
 function displayScore(playerChoice){
   let computerChoice = getComputerChoice();
   console.log(`Player Choice: ${playerChoice}`);
   console.log(`computer Choice: ${computerChoice}`);
   console.log(`${playRound(playerChoice, computerChoice)}`);
   game(playerChoice, computerChoice)
+  htmlHand(playerChoice, computerChoice)
 }
 
 getPlayerChoice()

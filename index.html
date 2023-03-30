@@ -9,15 +9,20 @@
 </head>
 <body>
   <div>
-    <div class="select-throw">Select your throw (for RPS)</div>
-    <div>
+    <div class="rps-container">
       <button class="rps-button" value="Rock">✊</button>
       <button class="rps-button" value="Paper">✋</button>
       <button class="rps-button" value="Scissor">✌️</button>
     </div>
     <div class="score">
-      <div id="player-score">Player: 0</div>
-      <div id="computer-score">Computer: 0</div>
+      <div class="score-container">
+        <div class="hand" id="playerHand">❓</div>
+        <div id="player-score">Player: 0</div>
+      </div>
+      <div class="score-container">
+        <div class="hand" id="computerHand">❓</div>
+        <div id="computer-score">Computer: 0</div>
+      </div>
     </div>
   </div>
   <script src="script.js"></script>
