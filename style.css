@@ -26,3 +26,8 @@ body{
 #computer-score{
   margin: 25px 15px;
 }
+
+.select-throw{
+  display: flex;
+  justify-content: center;
+}
